@@ -1,0 +1,36 @@
+{
+  "name": "timefutebolnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitordacruz/timeFutebolNode.git"
+  },
+  "author": "Vitor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitordacruz/timeFutebolNode/issues"
+  },
+  "homepage": "https://github.com/vitordacruz/timeFutebolNode#readme",
+  "dependencies": {
+    "bcrypt": "5.0.0",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-async-errors": "3.1.1",
+    "jsonwebtoken": "8.5.1",
+    "morgan": "1.10.0",
+    "pg": "8.3.3",
+    "pg-hstore": "2.3.3",
+    "sequelize": "6.3.5",
+    "uuid": "8.3.0",
+    "yup": "0.29.3"
+  },
+  "devDependencies": {
+    "jslint": "0.12.1",
+    "nodemon": "2.0.4"
+  }
+}
