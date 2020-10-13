@@ -7,6 +7,8 @@ const { ValidationError } = require("yup");
 const BusinessException = require("./common/exceptions/BusinessException");
 const server_port = "3000";
 
+sequelize.sync({ alter: true });
+
 
 const app = express();
 app.use(morgan("combine"));
