@@ -8,6 +8,12 @@ const validadorDeSchemaSaveOrUpdate = Yup.object().shape({
 });
 
 class TimesController {
+
+  async show (req, res) {
+    const result = await Time.findAll();
+    res.json(result);
+  }
+
   async store(req, res) {
     await validadorDeSchemaSaveOrUpdate.validate(req.body, {
       abortEarly: false,

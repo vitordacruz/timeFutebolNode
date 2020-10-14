@@ -9,6 +9,7 @@ const validadorDeSchemaSaveOrUpdate = Yup.object().shape({
 });
 
 class UsuariosController {
+    
   async store(req, res) {
     await validadorDeSchemaSaveOrUpdate.validate(req.body, {
       abortEarly: false,
