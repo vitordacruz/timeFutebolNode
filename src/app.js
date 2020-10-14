@@ -6,6 +6,7 @@ const sequelize = require("./config/db");
 const { ValidationError } = require("yup");
 const BusinessException = require("./common/exceptions/BusinessException");
 const usuariosRouter = require("./routes/usuariosRouter");
+const timesRouter = require("./routes/timesRouter");
 const server_port = "3000";
 
 sequelize.sync({ alter: true });
@@ -15,6 +16,7 @@ const app = express();
 app.use(morgan("combine"));
 app.use(express.json());
 app.use("/usuarios", usuariosRouter);
+app.use("/times", timesRouter);
 
 
 app.use((err, req, res, next) => {
