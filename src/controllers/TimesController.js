@@ -45,8 +45,45 @@ class TimesController {
 
     await Time.create({ nome, cidadeEstado });
 
-    res.send();
+    res.sendStatus(201);
   }
+
+  async update(req, res) {
+    await validadorDeSchemaSaveOrUpdate.validate(req.body, {
+      abortEarly: false,
+    });
+
+    const { id } = req.params;
+
+    const time = await Time.findByPk(id);
+
+    if (time) {
+      const { nome, cidadeEstado } = req.body;
+
+      await time.update({
+        nome,
+        cidadeEstado,
+      });
+
+      res.send();
+    } else {
+      res.sendStatus(404);
+    }
+  }
+
+  async destroy(req, res) {
+    const { id } = req.params;
+
+    const time = await Time.findByPk(id);
+
+    if (time) {
+      await time.destroy();
+      res.send();
+    } else {
+      res.sendStatus(404);
+    }
+  }
+
 }
 
 module.exports = new TimesController();
